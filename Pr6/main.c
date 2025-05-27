@@ -1,18 +1,14 @@
-#include <stdio.h>
+
 #include <stdlib.h>
 
-void free_memory(char *ptr) {
-    free(ptr);
-}
-
-void use_memory() {
-    char *buffer = malloc(20);
-    snprintf(buffer, 20, "Дані для використання");
-    free_memory(buffer);
-    printf("%s\n", buffer);  // Використання після free — помилка
-}
-
 int main() {
-    use_memory();
-    return 0;
+    int *arr = malloc(10 * sizeof(int));
+    arr[10] = 5;  
+    return 0;     
 }
+
+// gcc -fsanitize=address -g -o leak_asan leak.c
+// ./leak_val
+
+// gcc -g -o leak_val leak.c
+// valgrind ./leak_val
