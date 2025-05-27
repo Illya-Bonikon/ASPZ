@@ -40,8 +40,8 @@ void test_negative_malloc()
 int main()
 {
 
-	// test_negative_malloc();
-	// test_overflowed_signed_multiplication();
+	test_negative_malloc();
+	test_overflowed_signed_multiplication();
 
 	return 0;
 }
