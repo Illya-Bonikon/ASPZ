@@ -30,32 +30,32 @@ void try_access_file(const char *filepath)
 	int fd = open(filepath, O_RDONLY);
 	if (fd < 0)
 	{
-		printf("  ❌ Читання: %s\n", strerror(errno));
+		printf("  Читання: %s\n", strerror(errno));
 	}
 	else
 	{
-		printf("  ✅ Читання: доступ дозволено\n");
+		printf("  Читання: доступ дозволено\n");
 		close(fd);
 	}
 
 	fd = open(filepath, O_WRONLY | O_APPEND);
 	if (fd < 0)
 	{
-		printf("  ❌ Запис: %s\n", strerror(errno));
+		printf("  Запис: %s\n", strerror(errno));
 	}
 	else
 	{
-		printf("  ✅ Запис: доступ дозволено\n");
+		printf("  Запис: доступ дозволено\n");
 		close(fd);
 	}
 
 	if (access(filepath, X_OK) == 0)
 	{
-		printf("  ✅ Виконання: доступ дозволено\n");
+		printf("  Виконання: доступ дозволено\n");
 	}
 	else
 	{
-		printf("  ❌ Виконання: %s\n", strerror(errno));
+		printf("  Виконання: %s\n", strerror(errno));
 	}
 }
 

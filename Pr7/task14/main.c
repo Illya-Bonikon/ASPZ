@@ -78,4 +78,4 @@ int main(int argc, char *argv[])
 }
 
 // echo -e "Hello, this is a test.\n\n\nSome random text here.\n\n\nAnother block of text." > disk_image.bin
-// ./recover disk_image.bin
+// ./main disk_image.bin
